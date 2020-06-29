@@ -4,7 +4,12 @@
 - [x] Run a HELLO WORLD
 
 [Outline of the project](Outline.md)
+
 [Requirements analysis](Requirements_analysis)
+
+[Outline of the project(On CodiMD)](https://pad.degrowth.net/l_bWQ5dQSTKTjgpynF6LGg?both)
+
+[Requirements analysis(On CodiMD](https://pad.degrowth.net/4EioQ4mBS9SjgkWMfINfAw)
 
 ## flow of the task
 
