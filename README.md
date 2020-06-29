@@ -1,7 +1,7 @@
 # WIFI Positioning
-- [ ] Install JAVA environment
-- [ ] Install Android studio
-- [ ] Run a HELLO WORLD
+- [x] Install JAVA environment
+- [x] Install Android studio
+- [x] Run a HELLO WORLD
 ## Install steps
 ### Install java SDK
 > https://www.runoob.com/java/java-environment-setup.html
