@@ -30,8 +30,9 @@ gantt
   section B-F
   
   UI design(coding): a4, 2020-06-30, 3d
-  Client and Server(network): a6, 2020-07-01, 2d
-  User system: a5, 2020-07-01,2d
+  Client and Server(network): a5, 2020-07-01, 2d
+  DataBase: a5.1, 2020-07-01, 2d
+  User system: a5.2, 2020-07-01,2d
   Position:a6, 2020-07-03,4d
   
   
@@ -53,14 +54,15 @@ gantt
 - [ ] 3. UI beautify
 - [ ] 4. UI design(coding)
 - [ ] 5. Client and Server(network)
-- [ ] 6. Position
-- [ ] 7. Element recommend
-- [ ] 8. Information query
-- [ ] 9. Feedback
-- [ ] 10. Check Presence
-- [ ] 11. MalFunction Remind
-- [ ] 12. PPT
-- [ ] 13. Document
+- [ ] 6. DataBase
+- [ ] 7. Position
+- [ ] 8. Element recommend
+- [ ] 9. Information query
+- [ ] 10. Feedback
+- [ ] 11. Check Presence
+- [ ] 12. MalFunction Remind
+- [ ] 13. PPT
+- [ ] 14. Document
 
 |In short|Meaning|
 |-|-|
@@ -90,23 +92,21 @@ gantt
 ## distribute
 |Work|Manager|Task Explain|
 |-|-|-|
-|Requirement analysis|||
+|Requirement analysis|LiuJiaXu||
 ||||
-|basic UI design|Liujiaxu||
-|UI beautify|Liujiaxu||
+|Basic UI design|Liujiaxu|Using modao|
+|UI beautify|Liujiaxu|using modao|
 |UI design(coding)|Liujiaxu||
 |Client and Server(network)|Zhangfu||
-|Position|||
+|Position|ZQK||
 ||||
-|Element recommend|||
-|Information query|||
-|Feedback|||
-|Check Presence|||
-|MalFunction Remind|||
+|Element recommend|huanglin||
+|Information query|helanlan||
+|Feedback|Zhangfu||
+|Check Presence|ZQK||
+|MalFunction Remind|Hemaoxin||
 ||||
-|PPT|||
-|Document|||
-
-
+|PPT|huanglin||
+|Document|ZQK||
 
 ----------------------------
