@@ -3,8 +3,8 @@
 - [x] Install Android studio
 - [x] Run a HELLO WORLD
 
-[](Outline.md)
-[](Requirements_analysis)
+[Outline of the project](Outline.md)
+[Requirements analysis](Requirements_analysis)
 
 ## flow of the task
 
