@@ -3,6 +3,9 @@
 - [x] Install Android studio
 - [x] Run a HELLO WORLD
 
+[](Outline.md)
+[](Requirements_analysis)
+
 ## flow of the task
 
 ```mermaid
