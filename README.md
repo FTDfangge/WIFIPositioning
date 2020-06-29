@@ -2,6 +2,65 @@
 - [x] Install JAVA environment
 - [x] Install Android studio
 - [x] Run a HELLO WORLD
+
+## flow of the task
+
+```mermaid
+gantt
+  title Gantt Diagram
+
+  section R-A
+  Requirements Analysis: a1, 2020-06-29, 1d
+  
+  section D-D
+  basic UI design: a2, 2020-06-29,1d
+  UI beautify: a3, 2020-07-08,2d
+  
+  section B-F
+  
+  UI design(coding): a4, 2020-06-30, 3d
+  Client and Server(network): a5, 2020-07-01, 2d
+  DataBase: a5.1, 2020-07-01, 2d
+  User system: a5.2, 2020-07-01,2d
+  Position:a6, 2020-07-03,4d
+  
+  
+  
+  section E-P
+  Element recommend: a8, 2020-07-08, 3d
+  Information query: a9, 2020-07-08, 2d
+  Feedback: a10, 2020-07-08, 2d
+  Check Presence: a11, 2020-07-08, 2d
+  MalFunction Remind: a12, 2020-07-08, 3d
+  
+  section END
+  Finish the Document: a13, 2020-07-11,1d
+  PPT: a14, 2020-07-11,1d
+ 
+```
+- [ ] 1. Requirement analysis
+- [ ] 2. basic UI design
+- [ ] 3. UI beautify
+- [ ] 4. UI design(coding)
+- [ ] 5. Client and Server(network)
+- [ ] 6. DataBase
+- [ ] 7. Position
+- [ ] 8. Element recommend
+- [ ] 9. Information query
+- [ ] 10. Feedback
+- [ ] 11. Check Presence
+- [ ] 12. MalFunction Remind
+- [ ] 13. PPT
+- [ ] 14. Document
+
+|In short|Meaning|
+|-|-|
+|R-A|Requirements Analysis|
+|D-D|Demo Design|
+|B-F|Basic Function|
+|E-P|Extra Part|
+|END|end of the task(including the file and ppt)|
+
 ## Install steps
 ### Install java SDK
 > https://www.runoob.com/java/java-environment-setup.html
