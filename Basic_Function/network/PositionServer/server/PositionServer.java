@@ -126,10 +126,10 @@ public class PositionServer {
 				pos[1] = rs.getInt("posY");
 				pos[2] = rs.getInt("posZ");
 				int feature = rs.getInt("feature");
-				String description = rs.getString("description");
 				int times = rs.getInt("times");
 				double feedback = rs.getDouble("feedback");
-				positions.add(new Position(name, pos, feature, description, times, feedback));
+				String description = rs.getString("description");
+				positions.add(new Position(name, pos, feature, times, feedback, description));
 			}
 			rs.close();
 			stmt.close();
