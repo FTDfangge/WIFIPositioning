@@ -4,17 +4,17 @@ public class Position {
 	private String name;
 	private int[] pos;
 	private int feature;
-	private String description;
 	private int timesComment;
 	private double feedback;
+	private String description;
 	
-	public Position(String name, int[] pos, int feature, String description, int times, double feedback) {
+	public Position(String name, int[] pos, int feature, int times, double feedback, String description) {
 		this.name = name;
 		this.pos = pos;
 		this.feature = feature;
-		this.description = description;
 		this.timesComment = times;
 		this.feedback = feedback;
+		this.description = description;
 	}
 
 	public String getName() {
@@ -29,16 +29,16 @@ public class Position {
 		return feature;
 	}
 	
-	public String getDescription() {
-		return description;
-	}
-	
 	public int getTimesComment() {
 		return timesComment;
 	}
 	
 	public double getFeedback() {
 		return feedback;
+	}
+	
+	public String getDescription() {
+		return description;
 	}
 	
 	public void updateFeedback(int score) {
