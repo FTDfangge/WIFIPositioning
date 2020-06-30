@@ -46,8 +46,8 @@ gantt
   PPT: a14, 2020-07-11,1d
  
 ```
-- [ ] 1. Requirement analysis
-- [ ] 2. basic UI design
+- [x] 1. Requirement analysis
+- [x] 2. basic UI design
 - [ ] 3. UI beautify
 - [ ] 4. UI design(coding)
 - [ ] 5. Client and Server(network)
