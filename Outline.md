@@ -16,6 +16,22 @@ digraph hierarchy {
 
 ## flow of the task
 
+- [x] 1. Requirement analysis
+- [ ] 2. basic UI design
+- [ ] 3. UI beautify
+- [ ] 4. UI design(coding)
+- [ ] 5. Client and Server(network)
+- [ ] 6. DataBase
+- [ ] 7. Position
+- [ ] 8. Element recommend
+- [ ] 9. Information query
+- [ ] 10. Feedback
+- [ ] 11. Check Presence
+- [ ] 12. MalFunction Remind
+- [ ] 13. PPT
+- [ ] 14. Document
+
+
 ```mermaid
 gantt
   title Gantt Diagram
@@ -49,20 +65,6 @@ gantt
   PPT: a14, 2020-07-11,1d
  
 ```
-- [x] 1. Requirement analysis
-- [ ] 2. basic UI design
-- [ ] 3. UI beautify
-- [ ] 4. UI design(coding)
-- [ ] 5. Client and Server(network)
-- [ ] 6. DataBase
-- [ ] 7. Position
-- [ ] 8. Element recommend
-- [ ] 9. Information query
-- [ ] 10. Feedback
-- [ ] 11. Check Presence
-- [ ] 12. MalFunction Remind
-- [ ] 13. PPT
-- [ ] 14. Document
 
 |In short|Meaning|
 |-|-|
