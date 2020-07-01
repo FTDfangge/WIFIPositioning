@@ -19,15 +19,21 @@ public class To_Server implements Runnable{
     
     public String recive_server(){
         String x="";
-        try {
+        new Thread(){public void run()
+        {             
+            try {
             InputStreamReader inputStreamReader=new InputStreamReader(client.getInputStream());
             bufferedReader=new BufferedReader(inputStreamReader);
+                while(true){
             x=bufferedReader.readLine();
-            System.out.println(x);
+            System.out.println(x);}
         }catch (Exception e){
             e.printStackTrace();
         }
-        return x;
+      
+        };
+                    }.start();
+         return x;
     }
     
     public void run()
