@@ -6,7 +6,7 @@ import java.net.*;
  * 学号：18301040
  * 邮箱：18301040@bjtu.edu.cn
  **/
-public class To_Server {
+public class To_Server implements Runnable{
     static Socket client;
     BufferedReader bufferedReader;
     static public PrintWriter writer;
@@ -28,8 +28,19 @@ public class To_Server {
         }
         return x;
     }
-
-    public void connect(String[] args) {
+public void run()
+{
+     try {
+            client = new Socket("", 2000);
+            writer = new PrintWriter(client.getOutputStream(), true);
+            writer.flush();
+            System.out.println("successful");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+}
+    
+  /*  public void connect(String[] args) {
         String serverName = args[0];
         int port = Integer.parseInt(args[1]);
         try {
@@ -41,7 +52,5 @@ public class To_Server {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-}
-
+ }*/
 
