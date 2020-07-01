@@ -9,7 +9,7 @@
 
 |direction|Message type|
 |-|-|
-|client->server|"R" + "#" + "name" + # + "password"|
+|client->server|"R" + # + "name" + # + "password"|
 |||
 |server->client|"YR" + # + "id"|
 |server->client|"NR" + # + "Name already exists"|
@@ -17,7 +17,7 @@
 ### Log in
 |direction|Message type|
 |-|-|
-|client->server|"L" + "#" + "id" + # + "password"|
+|client->server|"L" + # + "id" + # + "password"|
 |||
 |server->client|"YL"|
 |server->client|"NL" + # + "user id doesn't exist"|
@@ -27,8 +27,8 @@
 ### Modify information
 |direction|Message type|
 |-|-|
-|client->server|"M" + "#" + "--name--" + # + "new name"|
-|client->server|"M" + "#" + "--password--" + # + "new password"|
+|client->server|"M" + # + "--name--" + # + "new name"|
+|client->server|"M" + # + "--password--" + # + "new password"|
 |||
 |server->client|"YM"|
 |server->client|"NM" + # + "Something error"|
