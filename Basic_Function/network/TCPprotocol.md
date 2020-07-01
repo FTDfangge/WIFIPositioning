@@ -17,10 +17,10 @@
 ### Log in
 |direction|Message type|
 |-|-|
-|client->server|("name" or "id") + space + "password"|
+|client->server|"id" + space + "password"|
 |||
 |server->client|"YL"|
-|server->client|"NL" + space + "user id or name doesn't exist"|
+|server->client|"NL" + space + "user id doesn't exist"|
 |server->client|"NL" + space + "password is wrong"|
 
 
