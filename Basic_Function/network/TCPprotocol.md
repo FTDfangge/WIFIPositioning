@@ -9,29 +9,29 @@
 
 |direction|Message type|
 |-|-|
-|client->server|"name" + space + "password"|
+|client->server|"name" + # + "password"|
 |||
-|server->client|"YR" + space + "id"|
-|server->client|"NR" + space + "Name already exists"|
+|server->client|"YR" + # + "id"|
+|server->client|"NR" + # + "Name already exists"|
 
 ### Log in
 |direction|Message type|
 |-|-|
-|client->server|"id" + space + "password"|
+|client->server|"id" + # + "password"|
 |||
 |server->client|"YL"|
-|server->client|"NL" + space + "user id doesn't exist"|
-|server->client|"NL" + space + "password is wrong"|
+|server->client|"NL" + # + "user id doesn't exist"|
+|server->client|"NL" + # + "password is wrong"|
 
 
 ### Modify information
 |direction|Message type|
 |-|-|
-|client->server|"--name--" + space + "new name"|
-|client->server|"--password--" + space + "new password"|
+|client->server|"--name--" + # + "new name"|
+|client->server|"--password--" + # + "new password"|
 |||
 |server->client|"YM"|
-|server->client|"NM" + space + "Something error"|
+|server->client|"NM" + # + "Something error"|
 
 ----------------------------
 
@@ -43,13 +43,13 @@
 |-|-|
 |client->server|----(Not define)|
 |||
-|server->client|"position X" + space + "position Y"|
+|server->client|"position X" + # + "position Y"|
 
 ### Position information request
 
 |direction|Message type|
 |-|-|
-|client->server|"RQ" + space + "position X" + space + "position Y"|
+|client->server|"RQ" + # + "position X" + # + "position Y"|
 |||
 |server->client|all information of nearby specify position|
 
