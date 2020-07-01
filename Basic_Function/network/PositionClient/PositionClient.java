@@ -11,6 +11,19 @@ public class To_Server implements Runnable{
     private BufferedReader bufferedReader;
     private static public PrintWriter writer;
 
+    public To_Server()
+    {
+        try {
+            client = new Socket("", 2000);
+             InputStreamReader inputStreamReader=new InputStreamReader(client.getInputStream());
+            bufferedReader=new BufferedReader(inputStreamReader);
+            writer = new PrintWriter(client.getOutputStream(), true);
+            writer.flush();
+            System.out.println("successful");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void send_to_server(String message){
 
         writer.println(message);
@@ -19,12 +32,12 @@ public class To_Server implements Runnable{
     
     public String recive_server(){
         String x="";
-        new Thread(){public void run()
+        new Thread(){
+            public void run()
         {             
             try {
-            InputStreamReader inputStreamReader=new InputStreamReader(client.getInputStream());
-            bufferedReader=new BufferedReader(inputStreamReader);
-                while(true){
+           
+           while(true){
             x=bufferedReader.readLine();
             System.out.println(x);}
         }catch (Exception e){
@@ -32,20 +45,10 @@ public class To_Server implements Runnable{
         }
       
         };
-                    }.start();
+            }.start();
          return x;
     }
     
-    public void run()
-    {
-        try {
-            client = new Socket("", 2000);
-            writer = new PrintWriter(client.getOutputStream(), true);
-            writer.flush();
-            System.out.println("successful");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    
 }
 
