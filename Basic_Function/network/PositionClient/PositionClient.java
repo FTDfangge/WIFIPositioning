@@ -1,30 +1,47 @@
-package server;
+import java.io.*;
+import java.net.*;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.net.InetAddress;
-import java.net.Socket;
+/**
+ * 作者：何毛鑫
+ * 学号：18301040
+ * 邮箱：18301040@bjtu.edu.cn
+ **/
+public class To_Server {
+    static Socket client;
+    BufferedReader bufferedReader;
+    static public PrintWriter writer;
 
-public class PositionClient {
-	private Socket server;
-	private BufferedReader in;
-	private PrintWriter out;
-	
-	private int id;
-	private String name;
-	
-	public PositionClient() {
-		try {
-			server = new Socket(/*IP��ַ*/InetAddress.getLocalHost(), 2000);
-			in = new BufferedReader(new InputStreamReader(server.getInputStream()));
-			out = new PrintWriter(new OutputStreamWriter(server.getOutputStream()));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	
+    public void send_to_server(String message){
+
+        writer.println(message);
+        writer.flush();
+    }
+    public String recive_server(){
+        String x="";
+        try {
+            InputStreamReader inputStreamReader=new InputStreamReader(client.getInputStream());
+            bufferedReader=new BufferedReader(inputStreamReader);
+            x=bufferedReader.readLine();
+            System.out.println(x);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return x;
+    }
+
+    public void connect(String[] args) {
+        String serverName = args[0];
+        int port = Integer.parseInt(args[1]);
+        try {
+            client = new Socket(serverName, port);
+
+            writer = new PrintWriter(client.getOutputStream(), true);
+            writer.flush();
+            System.out.println("successful");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
+
