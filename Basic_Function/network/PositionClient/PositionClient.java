@@ -39,14 +39,14 @@ public class To_Server implements Runnable{
            
            while(true){
             x=bufferedReader.readLine();
-            System.out.println(x);}
+            System.out.println(x);} return x;
         }catch (Exception e){
             e.printStackTrace();
         }
       
         };
             }.start();
-         return x;
+        
     }
     
     
