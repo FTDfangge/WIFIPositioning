@@ -19,7 +19,7 @@
 |-|-|
 |client->server|"L" + # + "id" + # + "password"|
 |||
-|server->client|"YL"|
+|server->client|"YL" + # + "name"|
 |server->client|"NL" + # + "user id doesn't exist"|
 |server->client|"NL" + # + "password is wrong"|
 
