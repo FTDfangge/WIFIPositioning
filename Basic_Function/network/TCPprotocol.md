@@ -34,23 +34,3 @@
 |server->client|"NM" + # + "Something error"|
 
 ----------------------------
-
-## Position information transmission
-
-### Position yourself
-
-|direction|Message type|
-|-|-|
-|client->server|----(Not define)|
-|||
-|server->client|"position X" + # + "position Y"|
-
-### Position information request
-
-|direction|Message type|
-|-|-|
-|client->server|"RQ" + # + "position X" + # + "position Y"|
-|||
-|server->client|all information of nearby specify position|
-
-----------------------------
