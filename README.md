@@ -1,5 +1,6 @@
 # WIFI Pos# WIFI Positioning
 >>>REMEMBER TO UPDATE THE MARKDOWN DOCUMENT AFTER EDIT IT ON WEBSITE ! ! ! ! ! ! !
+
 >Every markdown in CodiMd's website is here:
 
 > [README.md](https://pad.degrowth.net/rY0I5ZAXQW-SPFLtdSx4GA?both)
@@ -18,6 +19,7 @@
 
 -------------------------
 >Every markdown in github is here:
+
 >[PROGRESS](progress.md)
 
 >[REQUIREMENTS_ANALYSISI](Requirements_analysis.md)
@@ -41,9 +43,9 @@
 
 [Requirements analysis(On CodiMD](https://pad.degrowth.net/4EioQ4mBS9SjgkWMfINfAw)
 
-- [ ] Install JAVA environment
-- [ ] Install Android studio
-- [ ] Run a HELLO WORLD
+- [X] Install JAVA environment
+- [X] Install Android studio
+- [X] Run a HELLO WORLD
 ## Install steps
 ### Install java SDK
 > https://www.runoob.com/java/java-environment-setup.html
