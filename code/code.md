@@ -102,4 +102,158 @@ private void scanSuccess()
 
 ### POSITIONING PART
 
+Position method: First we get the 2-d map, which has the x&y coordinate, then we turn it into the 1-d map, which only has the room number, and get the 4-d map, which has 4 strongest AP's signal level.
+When we are going to find someone's position, we can get his/her 4 strongest APs, then we compare it with the point in the map.
+We have two calculate methods: one is calculate the shortest Euclidean Distance, the other is calculate the biggest cosine.
+The detailed information is in the video below:
+
+{%bilibili BV1uz411v7NK %}
+
+#### Build the class
+|Class|Var1|Var2|Var3|Var4|Var5|
+|-|-|-|-|-|-|
+|AP|BSSID String|SSID String|level int|
+|Point|id int|x,y int|ap1,ap2,ap3,ap4 AP|
+|Map|pointList List<Point>|id String|
+
+>This is the major code of Class AP, only include the two constructors
+```java=
+public class AP {
+    private String BSSID;
+    private String SSID;
+    private int level;
+
+    //constructor with out variable
+    public AP()
+    {
+        BSSID = "00:00:00:00:00:00";
+        SSID = "";
+        level = 0;
+    }
+    //constructor with 3 vars
+    public AP(String B,String S,int l)
+    {
+        BSSID = B;
+        SSID = S;
+        level = l;
+    }
+}
+```
+
+>This is the major code of Class Point only include two constructors
+```java=
+public class Point {
+    private AP ap1,ap2,ap3,ap4; //4-dimension map's position
+    private int id; //1-dimension map's position
+    private int x,y; //2-dimension map's position
+
+    //constructor without var
+    public Point()
+    {
+        ap1 = new AP();
+        ap2 = new AP();
+        ap3 = new AP();
+        ap4 = new AP();
+        id = -1;  //-1 means not valued
+        x = -1;
+        y = -1;
+    }
+    //constructor with all vars
+    public Point(AP ap1, AP ap2, AP ap3, AP ap4,int id,int x,int y)
+    {
+        this.ap1 = ap1;
+        this.ap2 = ap2;
+        this.ap3 = ap3;
+        this.ap4 = ap4;
+        this.id = id;
+        this.x = x;
+        this.y = y;
+    }
+}
+```
+
+>I won't show the map class for it is too simple.
+
+#### Write the positioning algorithm
+>Calculate by distance:
+```java=
+// calculate the Euclidean Distance
+    private double calculateDis(Point p1, Point p2)
+    {
+        double distance = -1;
+
+
+        distance = Math.sqrt((p1.getAp1().getLevel()-p2.getAp1().getLevel())*(p1.getAp1().getLevel()-p2.getAp1().getLevel())
+                            +(p1.getAp2().getLevel()-p2.getAp2().getLevel())*(p1.getAp2().getLevel()-p2.getAp2().getLevel())
+                            +(p1.getAp3().getLevel()-p2.getAp3().getLevel())*(p1.getAp3().getLevel()-p2.getAp3().getLevel())
+                            +(p1.getAp4().getLevel()-p2.getAp4().getLevel())*(p1.getAp4().getLevel()-p2.getAp4().getLevel()));
+
+        return distance;
+    }
+
+    private Point findTheNearestPointByDis()
+    {
+        Point nearestPoint = new Point();
+        double minDis = MAX_DISTANCE;
+        Iterator<Point> itr = currentMap.getPointList().iterator();
+        while(itr.hasNext())
+        {
+            Point cP = itr.next();
+            double dis = calculateDis(cP,currentPositionPoint);
+            if (dis <= minDis)
+            {
+                minDis = dis;
+                nearestPoint = cP;
+            }
+        }
+
+        return nearestPoint;
+    }
+```
+
+>Calculate by cosine:
+```java=
+// calculate the cosine in 4-dimensional map
+    private double calculateCos(Point p1, Point p2)
+    {
+        double cosine = -1; // 180° is impossible
+
+        Point Opoint = new Point();
+        cosine = calculateInnerProduct(p1,p2) / (calculateDis(p1,Opoint)*calculateDis(p2,Opoint));
+
+        return cosine;
+    }
+
+    // calculate the inner product
+    private double calculateInnerProduct(Point p1, Point p2) {
+        double InnerProduct = -2;
+
+        InnerProduct = (p1.getAp1().getLevel()*p2.getAp1().getLevel()
+                        +p1.getAp2().getLevel()*p2.getAp2().getLevel()
+                        +p1.getAp3().getLevel()*p2.getAp3().getLevel()
+                        +p1.getAp4().getLevel()*p2.getAp4().getLevel());
+
+        return InnerProduct;
+    }
+
+    private Point findTheNearestPointByCos()
+    {
+        Point nearestPoint = new Point();
+        double maxCos = 1;
+        Iterator<Point> itr = currentMap.getPointList().iterator();
+        while(itr.hasNext())
+        {
+            Point cP = itr.next();
+            double dis = calculateCos(cP,currentPositionPoint);
+            if (dis >= maxCos)
+            {
+                maxCos = dis;
+                nearestPoint = cP;
+            }
+        }
+
+        return nearestPoint;
+    }
+```
+
 ## EXTRA-PART
