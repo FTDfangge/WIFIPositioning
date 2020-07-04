@@ -1,5 +1,5 @@
 # WIFI Pos# WIFI Positioning
-
+>>>REMEMBER TO UPDATE THE MARKDOWN DOCUMENT AFTER EDIT IT ON WEBSITE ! ! ! ! ! ! !
 >Every markdown in CodiMd's website is here:
 
 > [README.md](https://pad.degrowth.net/rY0I5ZAXQW-SPFLtdSx4GA?both)
@@ -12,6 +12,25 @@
 
 > [WIFISIGNALMAP.md](https://pad.degrowth.net/AMQhc73kQ0yTdfmSYjKV6w?both)
 
+> [CODE.md](https://pad.degrowth.net/SfR17wqsR---3XodxepPjA)
+
+> [Picture.md](https://pad.degrowth.net/Yc-zZKqMRtOy9i2WSiJ6Tg)
+
+-------------------------
+>Every markdown in github is here:
+>[PROGRESS](progress.md)
+
+>[REQUIREMENTS_ANALYSISI](Requirements_analysis.md)
+
+>[OUTLINE](Outline.md)
+
+>[KAITI](KaiTi.md)
+
+>[WIFISIGNALMAP](WIFISignalMap.md)
+
+>[CODE](/code/code.md)
+
+>[PICTURE](/pictures/pictures.md)
 
 -------------------------
 [Outline of the project](Outline.md)
