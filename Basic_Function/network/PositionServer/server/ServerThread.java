@@ -1,90 +1,102 @@
-/**
- * 作者：何毛鑫
- * 学号：18301040
- * 邮箱：18301040@bjtu.edu.cn
- **/
-import com.sun.corba.se.spi.activation.Server;
+package server;
 
-import java.io.*;
-import java.net.ServerSocket;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.Socket;
 
 
-public class Sever implements Runnable {
-    private ServerSocket server;
-    private Socket socket;
-    private BufferedReader bufferedReader;
-    PrintWriter printWriter;
-    String log_in_TF;
-    String info;
-    PositionServer2 PS=new PositionServer2();
+public class ServerThread implements Runnable {
+	private Socket client;
+	private BufferedReader bufferedReader;
+    private PrintWriter printWriter;
+    private Server ps ;
+    private boolean isLogin;
+    private int id;
+    private String password;
+    private String name;
+    private String info;
+    //String info;
+    
+	public ServerThread(Socket client, Server ps) {
+		this.client = client;
+		this.ps = ps;
+		isLogin = false;
+		try {
+			printWriter = new PrintWriter(client.getOutputStream(), true);
+			bufferedReader = new BufferedReader(new InputStreamReader(client.getInputStream()));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        
+	}
 
+	@Override
     public void run() {
         try {
-            printWriter = new PrintWriter(socket.getOutputStream(), true);
-            bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            printWriter = new PrintWriter(client.getOutputStream(), true);
+            bufferedReader = new BufferedReader(new InputStreamReader(client.getInputStream()));
         } catch (IOException e) {
             e.printStackTrace();
         }
         try {
             while (true) {
-
                 String message = "";
                 String x = bufferedReader.readLine();
-                if(x==null){
-                    bufferedReader.close();
+                if(x == null){
                     break;
                 }
                 System.out.println(x);
 
-                //筛选从客户端接收到的信息的类别
+                //ɸѡ�ӿͻ��˽��յ�����Ϣ�����
                 String[] define = x.split("#");
-                if(define[0].equals("L")){
-                    log_in_TF=PS.searchCustomer(Integer.parseInt(define[1]),define[2]);
-                    if(log_in_TF.equals("user id doesn't exist")){
+				
+				switch (define[0]) {
+				case "L":
+					info = ps.searchCustomer(Integer.parseInt(define[1]),define[2]);
+                    if(info.equals("user id doesn't exist")){
                         message="NL" + "#" + "user id doesn't exist";
-                    }else if(log_in_TF.equals("password is wrong")){
+                    }else if(info.equals("password is wrong")){
                         message="NL" + "#" + "password is wrong";
                     }else{
-                        message="YL";
-                        info=log_in_TF;
+                        isLogin = true;
+                        String[] information = info.split("#");
+                        id = Integer.parseInt(information[0]);
+                        password = information[1];
+                        name = information[2];
+                        message="YL#" + name;
                     }
                     printWriter.println(message);
                     printWriter.flush();
-                }
-
-                String[] information=info.split("#");
-                switch (define[0]) {
-                    case "R":
-                        log_in_TF=PS.searchCustomer(Integer.parseInt(define[1]),define[2]);
-                        if(log_in_TF==null){
-                            message = "YR" + "#" + Integer.parseInt(define[1]);
-                        }
-                        else{
-                            message="NR" + "#" + "Name already exists";
-                        }
-                        printWriter.println(message);
-                        printWriter.flush();
-                        break;
-                    case "M":
-                        if(define[2].equals("--name--")){
-                            PS.modifyCustomer(Integer.parseInt(information[0]),'P',define[2]);
-                        }
-                        else{
-                            PS.modifyCustomer(Integer.parseInt(information[0]),'N',define[2]);
-                        }
-                        message="YM";
-                        printWriter.println(message);
-                        printWriter.flush();
-                        break;
-
-                }
-
+					break;
+				case "R":
+					info = ps.insertCustomer(define[1], define[2]);
+					if (info != null) {
+						message = "YR" + "#" + info;
+					} else {
+						message = "NR" + "#" + "Name already exists";
+					}
+					printWriter.println(message);
+					printWriter.flush();
+					break;
+				case "M":
+					if(isLogin) {
+						if (define[2].equals("--name--")) {
+							ps.modifyCustomer(id, 'P', define[2]);
+						} else {
+							ps.modifyCustomer(id, 'N', define[2]);
+						}
+						message = "YM";
+						printWriter.println(message);
+						printWriter.flush();
+					}
+					break;
+				}
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-}
 
+}
