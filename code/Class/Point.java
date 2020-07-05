@@ -3,6 +3,8 @@ public class Point {
     private int id; //1-dimension map's position
     private int x,y; //2-dimension map's position
 
+    private List<AP> APList;
+
     //constructor without var
     public Point()
     {
@@ -13,6 +15,7 @@ public class Point {
         id = -1;  //-1 means not valued
         x = -1;
         y = -1;
+        List<AP> APList = new ArrayList<>();
     }
     //constructor with all vars
     public Point(AP ap1, AP ap2, AP ap3, AP ap4,int id,int x,int y)
@@ -24,9 +27,30 @@ public class Point {
         this.id = id;
         this.x = x;
         this.y = y;
+        List<AP> APList = new ArrayList<>();
     }
 
     //GETTERS AND SETTERS
+    
+    public void setAPList(List<ScanResult> resultList)
+    {
+        Iterator<ScanResult> itrForResultList = resultList.iterator();
+        while (itrForResultList.hasNext())
+        {
+            AP cAP = new AP();
+            ScanResult scanResult = itrForResultList.next();
+            cAP.setBSSID(scanResult.BSSID);
+            cAP.setSSID(scanResult.SSID);
+            cAP.setLevel(scanResult.level);
+            APList.add(cAP);
+        }
+    }
+
+    public List<AP> getAPList()
+    {
+        return APList;
+    }
+    
     public AP getAp1() {
         return ap1;
     }
@@ -73,6 +97,14 @@ public class Point {
 
     public void setY(int y) {
         this.y = y;
+    }
+    
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
     }
     //END OF GETTERS AND SETTERS
 }
