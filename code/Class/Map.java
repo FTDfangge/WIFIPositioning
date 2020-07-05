@@ -6,7 +6,7 @@ public class Map {
     private  List<Point> pointList;
     private String id;
 
-    private Map() {
+    public Map() {
 
     }
 
