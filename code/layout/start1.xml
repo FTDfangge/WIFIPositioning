@@ -14,7 +14,7 @@
         tools:layout_editor_absoluteY="0dp">
 
         <Button
-            android:id="@+id/startbtn"
+            android:id="@+id/loginbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -45,7 +45,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/PersonName"
+            android:id="@+id/userID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -55,8 +55,8 @@
             android:layout_marginEnd="102dp"
             android:layout_marginRight="102dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="用户名" />
+            android:hint="用户ID"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/registerbtn"
