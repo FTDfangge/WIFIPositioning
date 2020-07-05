@@ -69,7 +69,7 @@ public class Positioning {
         return distance;
     }
 
-    private Point findTheNearestPointByDis()
+    private Point findTheNearestPointByDis(Point currentPositionPoint)
     {
         Point nearestPoint = new Point();
         double minDis = MAX_DISTANCE;
@@ -111,7 +111,7 @@ public class Positioning {
         return InnerProduct;
     }
 
-    private Point findTheNearestPointByCos()
+    private Point findTheNearestPointByCos(Point currentPositionPoint)
     {
         Point nearestPoint = new Point();
         double maxCos = 1;
