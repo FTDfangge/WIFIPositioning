@@ -5,17 +5,49 @@ import java.util.List;
 public class Positioning {
 
     private static final double MAX_DISTANCE = Double.MAX_VALUE;
-    private Point currentPositionPoint;
     private Map currentMap ;
+    private static final Positioning positionTool = new Positioning();
 
     public Positioning()
     {
 
     }
-
-    public void setCurrentPositionPoint(Point p)
+    
+    public static Positioning positionTool()
     {
-        currentPositionPoint = p;
+        return positionTool;
+    }
+
+    public Point correctCoordinate(Point pInMap, Point currentPosition)
+    {
+        Point newVirtualPoint = new Point();
+        String BSSID1 = pInMap.getAp1().getBSSID();
+        String BSSID2 = pInMap.getAp2().getBSSID();
+        String BSSID3 = pInMap.getAp3().getBSSID();
+        String BSSID4 = pInMap.getAp4().getBSSID();
+
+        Iterator <AP> itr = currentPosition.getAPList().iterator();
+        while(itr.hasNext())
+        {
+            AP ap = itr.next();
+            if (ap.getBSSID() == BSSID1)
+            {
+                newVirtualPoint.setAp1(ap);
+            }
+            if (ap.getBSSID() == BSSID2)
+            {
+                newVirtualPoint.setAp2(ap);
+            }
+            if (ap.getBSSID() == BSSID3)
+            {
+                newVirtualPoint.setAp3(ap);
+            }
+            if (ap.getBSSID() == BSSID4)
+            {
+                newVirtualPoint.setAp4(ap);
+            }
+        }
+        return newVirtualPoint;
     }
 
     public void initCurrentMap(List<Point> pList , String id) {
@@ -45,7 +77,7 @@ public class Positioning {
         while(itr.hasNext())
         {
             Point cP = itr.next();
-            double dis = calculateDis(cP,currentPositionPoint);
+            double dis = calculateDis(cP,correctCoordinate(cP,currentPositionPoint));
             if (dis <= minDis)
             {
                 minDis = dis;
@@ -87,7 +119,7 @@ public class Positioning {
         while(itr.hasNext())
         {
             Point cP = itr.next();
-            double dis = calculateCos(cP,currentPositionPoint);
+            double dis = calculateCos(cP,correctCoordinate(cP,currentPositionPoint));
             if (dis >= maxCos)
             {
                 maxCos = dis;
@@ -100,13 +132,13 @@ public class Positioning {
 
 
     //major positioning code
-    public int getMyPositionByDis()
+    public int getMyPositionByDis(Point cPosition)
     {
-        return findTheNearestPointByDis().getId();
+        return findTheNearestPointByDis(cPosition).getId();
     }
 
-    public int getMyPositionByCos()
+    public int getMyPositionByCos(Point cPosition)
     {
-        return findTheNearestPointByCos().getId();
+        return findTheNearestPointByCos(cPosition).getId();
     }
 }
