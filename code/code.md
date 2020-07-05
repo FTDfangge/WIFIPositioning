@@ -3,6 +3,10 @@
 
 ## BASIC-FUNCTION
 
+### UI PART
+
+### NETWORK PART
+
 ### WIFI SCAN PART
 
 #### STEP1 Firstly, u should get the permission in /app/manifests/AndroidManifest.xml
@@ -101,7 +105,6 @@ private void scanSuccess()
 ```
 
 ### POSITIONING PART
-
 Position method: First we get the 2-d map, which has the x&y coordinate, then we turn it into the 1-d map, which only has the room number, and get the 4-d map, which has 4 strongest AP's signal level.
 When we are going to find someone's position, we can get his/her 4 strongest APs, then we compare it with the point in the map.
 We have two calculate methods: one is calculate the shortest Euclidean Distance, the other is calculate the biggest cosine.
@@ -113,7 +116,7 @@ The detailed information is in the video below:
 |Class|Var1|Var2|Var3|Var4|Var5|
 |-|-|-|-|-|-|
 |AP|BSSID String|SSID String|level int|
-|Point|id int|x,y int|ap1,ap2,ap3,ap4 AP|
+|Point|id int|x,y int|ap1,ap2,ap3,ap4 AP|pointList AP|
 |Map|pointList List<Point>|id String|
 
 >This is the major code of Class AP, only include the two constructors
@@ -175,6 +178,41 @@ public class Point {
 >I won't show the map class for it is too simple.
 
 #### Write the positioning algorithm
+>before calculating, we need to correct the coordinate
+```java=
+public Point correctCoordinate(Point pInMap, Point currentPosition)
+    {
+        Point newVirtualPoint = new Point();
+        String BSSID1 = pInMap.getAp1().getBSSID();
+        String BSSID2 = pInMap.getAp2().getBSSID();
+        String BSSID3 = pInMap.getAp3().getBSSID();
+        String BSSID4 = pInMap.getAp4().getBSSID();
+
+        Iterator <AP> itr = currentPosition.getAPList().iterator();
+        while(itr.hasNext())
+        {
+            AP ap = itr.next();
+            if (ap.getBSSID() == BSSID1)
+            {
+                newVirtualPoint.setAp1(ap);
+            }
+            if (ap.getBSSID() == BSSID2)
+            {
+                newVirtualPoint.setAp2(ap);
+            }
+            if (ap.getBSSID() == BSSID3)
+            {
+                newVirtualPoint.setAp3(ap);
+            }
+            if (ap.getBSSID() == BSSID4)
+            {
+                newVirtualPoint.setAp4(ap);
+            }
+        }
+        return newVirtualPoint;
+    }
+```
+
 >Calculate by distance:
 ```java=
 // calculate the Euclidean Distance
@@ -254,6 +292,35 @@ public class Point {
 
         return nearestPoint;
     }
+```
+
+#### Location Activity
+add two imageButtons, one is positioning by distance, the other is positioning by cosine
+```java=
+ImageButton positionButton,positionButton2;
+positionButton = (ImageButton) findViewById(R.id.imageButton);
+        positionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                currentPoint.setAPList(WIFIScanner.getInstance().getResultList());
+
+                roomId = Positioning.positionTool().getMyPositionByDis(currentPoint);
+
+
+            }
+        });
+
+        positionButton2 = (ImageButton) findViewById(R.id.imageButton2);
+        positionButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                currentPoint.setAPList(WIFIScanner.getInstance().getResultList());
+
+                roomId = Positioning.positionTool().getMyPositionByCos(currentPoint);
+
+
+            }
+        });
 ```
 
 ## EXTRA-PART
