@@ -36,6 +36,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Client c = Client.getClient();
+                if(!c.isConnect()) {
+                    c.connect();
+                }
+            }
+        }).start();
 
         startbtn111 = (Button) findViewById(R.id.startbtn111);
         startbtn111.setOnClickListener(new View.OnClickListener() {
