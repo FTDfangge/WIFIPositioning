@@ -10,18 +10,21 @@
     <TextView
         android:layout_width="91dp"
         android:layout_height="27dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginEnd="144dp"
         android:text="校园定位"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.464" />
 
     <Button
         android:id="@+id/startbtn111"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="496dp"
         android:text="开始"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,30 +34,10 @@
         android:id="@+id/imageView2"
         android:layout_width="134dp"
         android:layout_height="128dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="132dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="72dp"
-        android:text="扫描附近WIFI"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="205dp"
-        android:layout_height="404dp"
-        android:layout_marginStart="188dp"
-        android:layout_marginTop="140dp"
-        android:text="WIFI SCAN PART"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
