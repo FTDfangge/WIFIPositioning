@@ -16,6 +16,7 @@ public class LocationActivity extends AppCompatActivity {
     Button returnbtn9;
     ImageButton positionButton,positionButton2;
     Point currentPoint;
+    int roomId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class LocationActivity extends AppCompatActivity {
             public void onClick(View view) {
                 currentPoint.setAPList(WIFIScanner.getInstance().getResultList());
 
-                Positioning.positionTool().getMyPositionByDis(currentPoint);
+                roomId = Positioning.positionTool().getMyPositionByDis(currentPoint);
 
 
             }
@@ -51,7 +52,7 @@ public class LocationActivity extends AppCompatActivity {
             public void onClick(View view) {
                 currentPoint.setAPList(WIFIScanner.getInstance().getResultList());
 
-                Positioning.positionTool().getMyPositionByCos(currentPoint);
+                roomId = Positioning.positionTool().getMyPositionByCos(currentPoint);
 
 
             }
