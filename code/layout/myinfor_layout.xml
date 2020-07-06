@@ -7,79 +7,111 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="109dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="128dp"
+        android:id="@+id/myIcon"
+        android:layout_width="110dp"
+        android:layout_height="90dp"
         android:foreground="@drawable/dada"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.101"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
-        android:id="@+id/changephotobtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:id="@+id/changeIconbtn"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:text="更改头像"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/myIcon"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/myIcon"
+        app:layout_constraintTop_toBottomOf="@+id/myIcon" />
 
     <LinearLayout
-        android:layout_width="358dp"
-        android:layout_height="424dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="248dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="360dp"
+        android:layout_height="350dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.673">
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/tNumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="个性签名" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Name"
-            android:inputType="textPersonName" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center_horizontal|center_vertical"
             android:text="电话号码" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/editNumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:ems="10"
-            android:hint="Name"
             android:inputType="textPersonName" />
 
-        <Button
-            android:id="@+id/savebtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="保存" />
+        <TextView
+            android:id="@+id/tPersonality"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="个性签名" />
+
+        <EditText
+            android:id="@+id/editPersonality"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
     </LinearLayout>
 
     <Button
         android:id="@+id/returnbtn10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:text="返回"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/saveInfobtn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="保存"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.571" />
+
+    <TextView
+        android:id="@+id/tName"
+        android:layout_width="148dp"
+        android:layout_height="47dp"
+        android:gravity="center_horizontal|center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.118" />
+
+    <Button
+        android:id="@+id/changeNamebtn"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:text="更改名称"
+        app:layout_constraintBottom_toBottomOf="@+id/changeIconbtn"
+        app:layout_constraintEnd_toEndOf="@+id/tName"
+        app:layout_constraintStart_toStartOf="@+id/tName"
+        app:layout_constraintTop_toTopOf="@+id/changeIconbtn"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

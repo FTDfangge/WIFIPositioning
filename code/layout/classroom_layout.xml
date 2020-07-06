@@ -10,22 +10,21 @@
         android:id="@+id/returnbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="296dp"
-        android:layout_marginRight="296dp"
         android:text="返回"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/classroomlist"
-        android:layout_width="408dp"
-        android:layout_height="595dp"
-        android:layout_marginTop="132dp"
+        android:layout_width="405dp"
+        android:layout_height="670dp"
         android:background="#D0FB9E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp">
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints">
 
     </ListView>
 </androidx.constraintlayout.widget.ConstraintLayout>

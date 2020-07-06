@@ -10,20 +10,19 @@
         android:id="@+id/returnbtn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="60dp"
         android:text="返回"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/officelist"
-        android:layout_width="412dp"
-        android:layout_height="608dp"
-        android:layout_marginTop="124dp"
+        android:layout_width="405dp"
+        android:layout_height="670dp"
         android:background="#E3D6FA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-1dp"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

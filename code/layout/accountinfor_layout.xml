@@ -1,60 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/returnbtn12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="返回"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
-        android:layout_width="373dp"
-        android:layout_height="580dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="100dp"
+        android:id="@+id/linearLayout2"
+        android:layout_width="360dp"
+        android:layout_height="520dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/tCurrentPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="设置新密码：" />
+            android:layout_height="30dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="输入当前密码：" />
 
         <EditText
-            android:id="@+id/editTextTextPassword3"
+            android:id="@+id/editCurrentPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:ems="10"
             android:inputType="textPassword" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/tNewPassword1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="确认新密码：" />
+            android:layout_height="30dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="设置新密码：" />
 
         <EditText
-            android:id="@+id/editTextTextPassword4"
+            android:id="@+id/editNewPassword1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:ems="10"
             android:inputType="textPassword" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="346dp"
-            android:layout_height="wrap_content"
-            android:text="保存" />
+        <TextView
+            android:id="@+id/tNewPassword2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="确认新密码：" />
+
+        <EditText
+            android:id="@+id/editNewPassword2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:inputType="textPassword" />
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/returnbtn12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="返回"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/savePasswordbtn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="保存"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

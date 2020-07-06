@@ -8,36 +8,38 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tTitle"
         android:layout_width="91dp"
         android:layout_height="27dp"
-        android:layout_marginLeft="136dp"
-        android:layout_marginEnd="144dp"
+        android:layout_marginTop="120dp"
+        android:gravity="center_horizontal|center_vertical"
         android:text="校园定位"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/mainIcon"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464" />
+        app:layout_constraintStart_toStartOf="@+id/mainIcon"
+        app:layout_constraintTop_toBottomOf="@+id/mainIcon" />
 
     <Button
-        android:id="@+id/startbtn111"
+        android:id="@+id/startbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="496dp"
+        android:layout_marginBottom="80dp"
         android:text="开始"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tTitle"
+        app:layout_constraintStart_toStartOf="@+id/tTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tTitle"
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/mainIcon"
         android:layout_width="134dp"
         android:layout_height="128dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="132dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.18"
         app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

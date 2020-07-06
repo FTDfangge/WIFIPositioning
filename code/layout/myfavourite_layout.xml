@@ -10,18 +10,18 @@
         android:id="@+id/returnbtn11"
         android:layout_width="83dp"
         android:layout_height="43dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
         android:text="返回"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/favouritelist"
-        android:layout_width="409dp"
-        android:layout_height="594dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="405dp"
+        android:layout_height="670dp"
         android:background="#9EC3A0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

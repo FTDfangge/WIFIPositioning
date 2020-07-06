@@ -6,115 +6,103 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <Button
+        android:id="@+id/returnbtn15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="返回"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="59dp"
-            android:layout_marginEnd="197dp"
-            android:layout_marginRight="197dp"
-            android:text="我的" />
+    <ImageButton
+        android:id="@+id/rules"
+        android:layout_width="286dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/account"
+        app:layout_constraintStart_toStartOf="@+id/account"
+        app:layout_constraintTop_toBottomOf="@+id/account"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/pingtaiguize" />
 
-        <ImageView
-            android:id="@+id/touxiang"
-            android:layout_width="83dp"
-            android:layout_height="73dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="87dp"
-            android:layout_marginLeft="87dp"
-            android:layout_marginTop="118dp"
-            android:background="@drawable/dada"
-            tools:srcCompat="@drawable/dada" />
+    <ImageButton
+        android:id="@+id/account"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/information"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/information"
+        app:layout_constraintTop_toBottomOf="@+id/information"
+        app:srcCompat="@drawable/zhanghuanquan" />
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="194dp"
-            android:layout_marginLeft="194dp"
-            android:layout_marginTop="123dp"
-            android:text="用户名" />
+    <ImageButton
+        android:id="@+id/information"
+        android:layout_width="286dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="@+id/tMyNumber"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tMyNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tMyNumber"
+        app:srcCompat="@drawable/gerenxinxi" />
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="181dp"
-            android:layout_marginLeft="181dp"
-            android:layout_marginTop="164dp"
-            android:text="个性签名~~~" />
+    <ImageButton
+        android:id="@+id/keep"
+        android:layout_width="130dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/icon"
+        app:layout_constraintStart_toEndOf="@+id/icon"
+        app:layout_constraintTop_toTopOf="@+id/icon"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/shoucang" />
 
-        <ImageButton
-            android:id="@+id/shoucang"
-            android:layout_width="71dp"
-            android:layout_height="93dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="292dp"
-            android:layout_marginLeft="292dp"
-            android:layout_marginTop="105dp"
-            app:srcCompat="@drawable/shoucang" />
+    <TextView
+        android:id="@+id/tMyNumber"
+        android:layout_width="284dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="电话号码"
+        app:layout_constraintEnd_toEndOf="@+id/tMyName"
+        app:layout_constraintStart_toStartOf="@+id/tMyName"
+        app:layout_constraintTop_toBottomOf="@+id/tMyName" />
 
-        <ImageButton
-            android:id="@+id/xinxi"
-            android:layout_width="286dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginLeft="47dp"
-            android:layout_marginTop="238dp"
-            app:srcCompat="@drawable/gerenxinxi" />
+    <TextView
+        android:id="@+id/tMyName"
+        android:layout_width="284dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="用户名"
+        app:layout_constraintEnd_toEndOf="@+id/keep"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/icon"
+        app:layout_constraintTop_toBottomOf="@+id/icon" />
 
-        <ImageButton
-            android:id="@+id/zhanghu"
-            android:layout_width="285dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="46dp"
-            android:layout_marginLeft="46dp"
-            android:layout_marginTop="313dp"
-            app:srcCompat="@drawable/zhanghuanquan" />
+    <TextView
+        android:id="@+id/myInfo"
+        android:layout_width="138dp"
+        android:layout_height="45dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="我的信息"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/guize"
-            android:layout_width="286dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginLeft="47dp"
-            android:layout_marginTop="389dp"
-            app:srcCompat="@drawable/pingtaiguize" />
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="130dp"
+        android:layout_height="120dp"
+        android:background="@drawable/dada"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.224"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13999999"
+        tools:srcCompat="@drawable/dada" />
 
-        <Button
-            android:id="@+id/returnbtn15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="7dp"
-            android:layout_marginTop="24dp"
-            android:text="返回" />
-    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,26 +7,24 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView16"
-        android:layout_width="299dp"
-        android:layout_height="599dp"
+        android:id="@+id/tScanResult"
+        android:layout_width="296dp"
+        android:layout_height="492dp"
         android:text="WIFI SIGNAL SCAN:"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintVertical_bias="0.43" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/scanbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SCAN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.948" />
+        app:layout_constraintTop_toBottomOf="@+id/tScanResult" />
 </androidx.constraintlayout.widget.ConstraintLayout>
