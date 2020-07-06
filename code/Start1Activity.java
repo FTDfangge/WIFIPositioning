@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.schoolwifipositioning;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.schoolwifipositioning.CLASSES.Client;
 
 public class Start1Activity extends AppCompatActivity{
     TextView id;
@@ -39,19 +41,19 @@ public class Start1Activity extends AppCompatActivity{
         }
     };
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start1);
 
+        Client.getClient().send("cat");
+
         thread = new Thread(runnable);
         thread.start();
 
-        id = (TextView) findViewById(R.id.userID);
+        id = (TextView) findViewById(R.id.editUserID);
         id.setText(Client.getClient().getID());
-        password = (TextView) findViewById(R.id.password);
+        password = (TextView) findViewById(R.id.editPassword);
 
         login = (Button) findViewById(R.id.loginbtn);
         login.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +71,7 @@ public class Start1Activity extends AppCompatActivity{
             }
         });
 
-        register = (Button) findViewById(R.id.registerbtn);
+        register = (Button) findViewById(R.id.convertbtn);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,3 +110,4 @@ public class Start1Activity extends AppCompatActivity{
         }
     };
 }
+

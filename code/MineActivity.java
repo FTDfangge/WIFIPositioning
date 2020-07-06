@@ -1,3 +1,5 @@
+package com.example.schoolwifipositioning;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,10 +22,10 @@ public class MineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mine_layout);
 
-        xinxi = (ImageButton) findViewById(R.id.xinxi);
-        zhanghu = (ImageButton) findViewById(R.id.zhanghu);
-        guize = (ImageButton) findViewById(R.id.guize);
-        shoucang = (ImageButton) findViewById(R.id.shoucang);
+        xinxi = (ImageButton) findViewById(R.id.information);
+        zhanghu = (ImageButton) findViewById(R.id.account);
+        guize = (ImageButton) findViewById(R.id.rules);
+        shoucang = (ImageButton) findViewById(R.id.keep);
 
         xinxi.setOnClickListener(new View.OnClickListener() {
             @Override

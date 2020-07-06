@@ -1,7 +1,8 @@
+package com.example.schoolwifipositioning;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,15 +26,15 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_layout);
 
-        wode = (ImageButton) findViewById(R.id.wode);
-        sousuobtn = (ImageButton) findViewById(R.id.sousuobtn );
-        zixishi = (ImageButton) findViewById(R.id.zixishi);
-        bangongshi = (ImageButton) findViewById(R.id.bangongshi);
-        qita = (ImageButton) findViewById(R.id.qita);
-        quanbu = (ImageButton) findViewById(R.id.quanbu);
-        zhoubian = (ImageButton) findViewById(R.id.zhoubian);
-        dingwei = (ImageButton) findViewById(R.id.dingwei);
-        resou = (ImageButton) findViewById(R.id.resou);
+        wode = (ImageButton) findViewById(R.id.mine);
+        sousuobtn = (ImageButton) findViewById(R.id.searchbtn);
+        zixishi = (ImageButton) findViewById(R.id.study);
+        bangongshi = (ImageButton) findViewById(R.id.office);
+        qita = (ImageButton) findViewById(R.id.other);
+        quanbu = (ImageButton) findViewById(R.id.all);
+        zhoubian = (ImageButton) findViewById(R.id.nearby);
+        dingwei = (ImageButton) findViewById(R.id.location);
+        resou = (ImageButton) findViewById(R.id.topic);
 
 
         wode.setOnClickListener(new View.OnClickListener() {

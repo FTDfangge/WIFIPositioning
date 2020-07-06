@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.schoolwifipositioning;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,7 +10,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.schoolwifipositioning.CLASSES.Client;
 
 public class Start2Activity extends AppCompatActivity {
     TextView name;
@@ -49,7 +52,7 @@ public class Start2Activity extends AppCompatActivity {
         p1 = (TextView) findViewById(R.id.editPassword1);
         p2 = (TextView) findViewById(R.id.editPassword2);
 
-        register = (Button) findViewById(R.id.rgst);
+        register = (Button) findViewById(R.id.registerbtn);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
