@@ -19,7 +19,7 @@
 |-|-|
 |client->server|"L" + # + "id" + # + "password"|
 |||
-|server->client|"YL" + # + "name"|
+|server->client|"YL" + # + "name" + # + "personality" + # + "number"|
 |server->client|"NL" + # + "user id doesn't exist"|
 |server->client|"NL" + # + "password is wrong"|
 
@@ -27,8 +27,8 @@
 ### Modify information
 |direction|Message type|
 |-|-|
-|client->server|"M" + # + "--name--" + # + "new name"|
-|client->server|"M" + # + "--password--" + # + "new password"|
+|client->server|"M1" + # + "new password"|
+|client->server|"M2" + # + "P" + # + "new password" + # + "Y" + # + "new personality" + # + "M" + # + "new number"|
 |||
 |server->client|"YM"|
 |server->client|"NM" + # + "Something error"|
