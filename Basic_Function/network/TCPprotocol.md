@@ -28,7 +28,7 @@
 |direction|Message type|
 |-|-|
 |client->server|"M1" + # + "new password"|
-|client->server|"M2" + # + "P" + # + "new password" + # + "Y" + # + "new personality" + # + "M" + # + "new number"|
+|client->server|"M2" + # + "N" + # + "new name" + # + "Y" + # + "new personality" + # + "M" + # + "new number"|
 |||
 |server->client|"YM"|
 |server->client|"NM" + # + "Something error"|
