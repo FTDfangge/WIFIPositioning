@@ -40,7 +40,7 @@
 ### Basic information
 |direction|Message type|
 |-|-|
-|client->server|"Q" + # + "id"|
+|client->server|"Q" + # + "room id"|
 |||
 |server->client|"YQ" + # + "name" + # + "TAG"|
 |server->client|"YQP" + # + "picture"|
@@ -50,7 +50,7 @@
 ### Add feedback
 |direction|Message type|
 |-|-|
-|client->server|"F" + # + "id" + # + "feedback"|
+|client->server|"F" + # + "room id" + # + "feedback"|
 |||
 |server->client|"YF"|
 |server->client|"NF" + # + "Something error"|
@@ -58,5 +58,5 @@
 ### Malfunction remind
 |direction|Message type|
 |-|-|
-|client->server|"E" + # + "id" + # + "explain"|
+|client->server|"E" + # + "room id" + # + "explain"|
 
