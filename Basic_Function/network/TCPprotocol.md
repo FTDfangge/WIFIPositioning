@@ -46,3 +46,11 @@
 |server->client|"YQP" + # + "picture"|
 |server->client|"YQF" + # + "feedback1" + # + "feedback2" + # + "feedback3"....|
 |server->client|"NQ" + # + "Query failed"|
+
+### Add feedback
+|direction|Message type|
+|-|-|
+|client->server|"F" + # + "feedback"|
+|||
+|server->client|"YF"|
+|server->client|"NF" + # + "Something error"|
