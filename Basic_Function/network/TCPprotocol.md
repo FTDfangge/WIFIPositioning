@@ -59,7 +59,4 @@
 |direction|Message type|
 |-|-|
 |client->server|"E" + # + "id" + # + "explain"|
-|||
-|server->client|"YE"|
-|server->client|"NE" + # + "Something error"|
 
