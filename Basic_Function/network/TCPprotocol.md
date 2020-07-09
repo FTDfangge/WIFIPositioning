@@ -34,3 +34,15 @@
 |server->client|"NM" + # + "Something error"|
 
 ----------------------------
+
+## Position Query
+
+### Basic information
+|direction|Message type|
+|-|-|
+|client->server|"Q" + # + "id"|
+|||
+|server->client|"YQ" + # + "name" + # + "TAG"|
+|server->client|"YQP" + # + "picture"|
+|server->client|"YQF" + # + "feedback1" + # + "feedback2" + # + "feedback3"....|
+|server->client|"NQ" + # + "Query failed"|
