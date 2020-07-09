@@ -50,7 +50,7 @@
 ### Add feedback
 |direction|Message type|
 |-|-|
-|client->server|"F" + # + "feedback"|
+|client->server|"F" + # + "id" + # + "feedback"|
 |||
 |server->client|"YF"|
 |server->client|"NF" + # + "Something error"|
