@@ -49,7 +49,7 @@
 ### Add feedback
 |direction|Message type|
 |-|-|
-|client->server|"F" + # + "room id" + # + "feedback"|
+|client->server|"F" + # + "room id" + # + "user name" + # + "feedback"|
 |||
 |server->client|"YF"|
 |server->client|"NF" + # + "Something error"|
