@@ -42,8 +42,8 @@
 |-|-|
 |client->server|"Q" + # + "room id"|
 |||
-|server->client|"YQP" + # + "picture"|
-|server->client|"YQF" + # + "name1" + # + "feedback1" + # + "name2" + #  + "feedback2" + # + "name3" + #  + "feedback3"....|
+|server->client|"YQ" + # + "No feedback"|
+|server->client|"YQ" + # + "name" + # + "feedback"|
 |server->client|"NQ" + # + "Query failed"|
 
 ### Add feedback
