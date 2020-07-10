@@ -27,13 +27,13 @@
 |direction|Message type|
 |-|-|
 |client->server|"M1" + # + "new password"|
-|client->server|"M2" + # + "new name" + # + "new personality" + # + "new number"|
+|client->server|"M2" + # + "new name" + # + "new number" + # + "new personality"|
 |client->server|"M3"|
 |client->server|"picture"|
 |||
 |server->client|"YM1" + # + "password"|
 |server->client|"NM1" + # + "Something error"|
-|server->client|"YM2" + # + "name" + # + "personality" + # + "number"|
+|server->client|"YM2" + # + "name" + # + "number" + # + "personality"|
 |server->client|"NM2" + # + "Something error"|
 |server->client|"YM3"|
 |server->client|"NM3" + # + "Something error"|
