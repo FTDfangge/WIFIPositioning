@@ -29,6 +29,8 @@
 |-|-|
 |client->server|"M1" + # + "new password"|
 |client->server|"M2" + # + "new name" + # + "new personality" + # + "new number"|
+|client->server|"M3"|
+|client->server|"picture"|
 |||
 |server->client|"YM"|
 |server->client|"NM" + # + "Something error"|
